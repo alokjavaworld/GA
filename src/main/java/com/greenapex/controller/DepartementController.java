@@ -31,6 +31,7 @@ public class DepartementController {
 	@PostMapping("/save")
 	public ResponseEntity<Department> saveDept(@RequestBody Department dept) {
 		System.out.println("DepartementController.saveDept()");
+		System.out.println("check devtools");
 		try {
 			return new ResponseEntity(service.saveDept(dept), HttpStatus.CREATED);
 		} catch (DepartmentAlreadyExist e) {
@@ -52,13 +53,14 @@ public class DepartementController {
 
 	@GetMapping("/getAll")
 	public ResponseEntity<List<Department>> getAll() {
+		System.out.println("DepartementController.getAll()");
 		try {
 			return new ResponseEntity(service.getAllDept(),HttpStatus.OK);
 		} catch (DepartmentNotFound e) {
 			return new ResponseEntity(e.getMessage(),HttpStatus.CONFLICT);
 		}
 	}
-
+    
 	@PutMapping("/update")
 	public ResponseEntity<Department> updateDept(@RequestBody Department dept) {
 		try {
