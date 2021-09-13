@@ -30,6 +30,7 @@ public class DepartementController {
 	// save
 	@PostMapping("/save")
 	public ResponseEntity<Department> saveDept(@RequestBody Department dept) {
+		System.out.println("DepartementController.saveDept()");
 		try {
 			return new ResponseEntity(service.saveDept(dept), HttpStatus.CREATED);
 		} catch (DepartmentAlreadyExist e) {
