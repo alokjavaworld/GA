@@ -32,12 +32,14 @@ public class ProjectController {
 	// save
 	@PostMapping("/save")
 	public ResponseEntity<Project> saveProject(@RequestBody Project proj) {
+		System.out.println("ProjectController.saveProject()");
 		try {
 			return new ResponseEntity(service.save(proj), HttpStatus.CREATED);
 		} catch (ProjectAlreadyExist e) {
 			return new ResponseEntity(e.getMessage(), HttpStatus.CONFLICT);
 		}
 	}
+	
 	
 
 	// getall
@@ -78,16 +80,5 @@ public class ProjectController {
 		return service.findEmpMoreProjects();
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
