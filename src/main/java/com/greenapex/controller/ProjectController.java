@@ -45,7 +45,6 @@ public class ProjectController {
 	// getall
 	@GetMapping("/getAll")
 	public ResponseEntity<List<Employee>> getAll() {
- System.out.println("ProjectController.getAll()")
 		try {
 			return new ResponseEntity(service.getAllPoj(), HttpStatus.OK);
 		} catch (ProjectNotFoundException e) {
