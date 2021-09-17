@@ -1,7 +1,8 @@
 package com.greenapex.controller;
 
+
 import java.util.List;
-import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,12 +13,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.greenapex.exception.DepartmentAlreadyExist;
 import com.greenapex.exception.DepartmentNotFound;
-import com.greenapex.exception.EmployeeAlreadyExistException;
-import com.greenapex.exception.EmployeeNotFoundException;
 import com.greenapex.model.Department;
-import com.greenapex.model.Employee;
 import com.greenapex.service.IDepartmentService;
 
 @RestController
@@ -26,6 +25,7 @@ public class DepartementController {
 
 	@Autowired
 	private IDepartmentService service;
+	
 
 	// save
 	@PostMapping("/save")

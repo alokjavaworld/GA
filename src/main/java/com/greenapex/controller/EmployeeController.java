@@ -31,6 +31,7 @@ public class EmployeeController {
 
 	@PostMapping("/save")
 	public ResponseEntity<Employee> saveEmp(@RequestBody Employee emp) {
+		System.out.println("EmployeeController.saveEmp()");
 		try {
 			return new ResponseEntity(service.saveEmp(emp), HttpStatus.CREATED);
 		} catch (EmployeeAlreadyExistException e) {
