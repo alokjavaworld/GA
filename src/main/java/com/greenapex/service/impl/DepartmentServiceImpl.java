@@ -58,20 +58,12 @@ public class DepartmentServiceImpl implements IDepartmentService {
 	@Override
 	public Department updateDept(Department dept) throws DepartmentNotFound {
 		Department dept1 = null;
-
+     System.out.println("DepartmentServiceImpl.updateDept()");
 		if (dept.getDeptId() != null && repo.existsById(dept.getDeptId()))
 			dept1 = repo.save(dept);
 		else
 			throw new DepartmentNotFound("Department Not Found For Updation!");
 		return dept1;
 	}
-
-
-	
-	
-	
-	
-	
-	
 	
 }

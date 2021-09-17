@@ -50,7 +50,7 @@ public class EmployeeTest {
 	 
 	@Test
 	  public void testgetEmpById() throws Exception {
-		  MvcResult mvcResult= mvc.perform(get("/emp/findById/5")).andReturn();
+		  MvcResult mvcResult= mvc.perform(get("/emp/findById/1")).andReturn();
 		  String data=mvcResult.getResponse().getContentAsString();
 		  Employee e =  mapper.readValue(data, Employee.class);
 		    assertEquals("alok", e.getEmpName());

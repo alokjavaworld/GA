@@ -26,7 +26,7 @@ public class DepartmentControllerTest {
 	@Autowired
 	ObjectMapper mapper;
 
-	@BeforeEach
+	//@BeforeEach
 	public void adddepartment() throws Exception {
 		System.out.println("departmentcontrollertest.adddepartment()");
 		this.mockMvc.perform(post("/dept/save")).andDo(print()).andExpect(status().isCreated());
@@ -40,11 +40,11 @@ public class DepartmentControllerTest {
 		String content = mvc.getResponse().getContentAsString();
 		Department d = mapper.readValue(content, Department.class);
 		System.out.println("Success : " + content);
-		assertEquals("java", d.getDeptName());
+		assertEquals("XYZ", d.getDeptName());
 		assertEquals("rnc", d.getDeptLocation());
 	}
 
-	// @Test
+	//@Test
 	public void getAll() throws Exception {
 		MvcResult mvc = this.mockMvc.perform(get("/detp/getAll")).andReturn();
 		String data = mvc.getResponse().getContentAsString();
@@ -52,22 +52,5 @@ public class DepartmentControllerTest {
 		assertEquals(null, data);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

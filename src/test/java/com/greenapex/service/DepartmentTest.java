@@ -48,8 +48,6 @@ public class DepartmentTest {
 		assertEquals(null, dept.getDeptLocation());
 
 	}
-	
-	
 
 	@DisplayName("Get Dept Test")
 	@Test
@@ -63,7 +61,7 @@ public class DepartmentTest {
 	public static Department createDummyDepartment() {
 		Department testDept = new Department();
 		testDept.setDeptId(1);
-		testDept.setDeptName("java");  
+		testDept.setDeptName("java");
 		return testDept;
 
 	}
