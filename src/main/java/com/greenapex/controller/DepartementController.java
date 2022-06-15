@@ -40,7 +40,7 @@ public class DepartementController {
 	}
 	
 	
-	// find by id
+	// find by id and
 	@GetMapping("/findByid/{id}")
 	public ResponseEntity<Department> getById(@PathVariable("id") Integer id) {
 		try {
